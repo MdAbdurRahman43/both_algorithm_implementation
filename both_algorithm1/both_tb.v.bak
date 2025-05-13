@@ -1,0 +1,29 @@
+`timescale 1ns/1ns
+module both_tb;
+parameter n=16,w=4;
+reg [n-1:0] bus;
+reg clk,start;
+wire done;
+controller #(n,w) dut2 (
+    q0, q1,eqz, lda, clra, shfta, ldq, clrq, shftq, 
+ldm, clrf, addsub, dec, ldc, clk,start,done
+);
+both_algorithm1 #(n,w) dut1(
+    q0, q1,eqz, lda, clra, shfta, ldq, clrq, shftq, ldm, clrf, addsub, dec, ldc, clk, bus
+);
+initial begin 
+    clk = 0;
+    start = 0;
+    #1 start = 1; 
+end
+always #10 clk=~clk;
+initial begin 
+    bus = 0;
+    #40 bus = 4;   // Align with falling edge after first posedge (time 10)
+    #20 bus = 4;  // Align with falling edge at time 50 (after two cycles)
+end
+always @(posedge clk)
+$strobe("[time=%0t] clk=%b, z=%b,a=%b, q=%b, dut1.q1=%b , m=%b, dut2.lda=%b, dut2.ldm=%b, dut2.ldc=%b, dut2.ldq=%b, dut2.addsub=%b, done=%b ,dut1.q0=%b ,dut1.q1=%b ,dut2.state= %b, dut1.clra= %b, dut1.q1= %b", $time,
+ clk, dut1.z,dut1.a,dut1.q,dut1.q1, dut1.m, dut2.lda,dut2.ldm,dut2.ldc, dut2.ldq,dut2.addsub,
+ done,dut1.q0,dut1.q1,dut2.state,dut1.clra,dut1.q1);
+endmodule

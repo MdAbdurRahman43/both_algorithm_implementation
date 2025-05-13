@@ -1,0 +1,13 @@
+`timescale 1ns/1ns
+module shift_reg #(parameter n)(a,z,sb,clk,lda,clra,shfta);
+output reg [n-1:0] a;
+input [n-1:0] z;
+input sb,clk,lda,clra,shfta;
+
+always @(posedge clk) begin 
+if (clra) a<=0;
+else if (lda) a<=z;
+else if (shfta) a<={sb,a[n-1:1]};
+end
+
+endmodule

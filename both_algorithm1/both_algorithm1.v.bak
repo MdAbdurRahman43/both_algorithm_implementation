@@ -1,0 +1,20 @@
+module both_algorithm1 #(parameter n,w) (
+    q0, q11,eqz, lda, clra, shfta, ldq, clrq, shftq, ldm, clrf, addsub, dec, ldc, clk, bus
+);
+output q0, q11,eqz;
+input lda, clra, shfta, ldq, clrq, shftq, ldm, clrf, addsub, dec, ldc, clk;
+input [n-1:0] bus;
+wire q1;
+wire [n-1:0] a,m,q,z;
+wire [w-1:0] count;
+assign eqz = (count == 0); 
+assign q0=q[0]; 
+assign q11=q1;
+
+shift_reg #(n) ar(a,z,a[n-1],clk,lda,clra,shfta);
+shift_reg #(n) qr(q,bus,a[0],clk,ldq,clrq,shftq);
+dff ff(q[0],q1,clk,clrf);
+pipo #(n) mr(bus,m,clk,ldm);
+alu #(n) ads(z,a,m,addsub,clk);
+counter #(w,n) cn(count,ldc,dec,clk);
+endmodule

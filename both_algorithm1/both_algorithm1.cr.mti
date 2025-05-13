@@ -1,0 +1,57 @@
+{F:/vlsi project/both_algorithm1/alu.v} {1 {vlog -work work -vopt -stats=none {F:/vlsi project/both_algorithm1/alu.v}
+Model Technology ModelSim SE-64 vlog 10.7 Compiler 2017.12 Dec  7 2017
+-- Compiling module alu
+
+Top level modules:
+	alu
+
+} {} {}} {F:/vlsi project/both_algorithm1/both_tb.v} {1 {vlog -work work -vopt -stats=none {F:/vlsi project/both_algorithm1/both_tb.v}
+Model Technology ModelSim SE-64 vlog 10.7 Compiler 2017.12 Dec  7 2017
+-- Compiling module both_tb
+
+Top level modules:
+	both_tb
+
+} {} {}} {F:/vlsi project/both_algorithm1/shift_reg.v} {1 {vlog -work work -vopt -stats=none {F:/vlsi project/both_algorithm1/shift_reg.v}
+Model Technology ModelSim SE-64 vlog 10.7 Compiler 2017.12 Dec  7 2017
+-- Compiling module shift_reg
+
+Top level modules:
+	shift_reg
+
+} {} {}} {F:/vlsi project/both_algorithm1/both_algorithm1.v} {1 {vlog -work work -vopt -stats=none {F:/vlsi project/both_algorithm1/both_algorithm1.v}
+Model Technology ModelSim SE-64 vlog 10.7 Compiler 2017.12 Dec  7 2017
+-- Compiling module both_algorithm1
+
+Top level modules:
+	both_algorithm1
+
+} {} {}} {F:/vlsi project/both_algorithm1/dff.v} {1 {vlog -work work -vopt -stats=none {F:/vlsi project/both_algorithm1/dff.v}
+Model Technology ModelSim SE-64 vlog 10.7 Compiler 2017.12 Dec  7 2017
+-- Compiling module dff
+
+Top level modules:
+	dff
+
+} {} {}} {F:/vlsi project/both_algorithm1/pipo.v} {1 {vlog -work work -vopt -stats=none {F:/vlsi project/both_algorithm1/pipo.v}
+Model Technology ModelSim SE-64 vlog 10.7 Compiler 2017.12 Dec  7 2017
+-- Compiling module pipo
+
+Top level modules:
+	pipo
+
+} {} {}} {F:/vlsi project/both_algorithm1/counter.v} {1 {vlog -work work -vopt -stats=none {F:/vlsi project/both_algorithm1/counter.v}
+Model Technology ModelSim SE-64 vlog 10.7 Compiler 2017.12 Dec  7 2017
+-- Compiling module counter
+
+Top level modules:
+	counter
+
+} {} {}} {F:/vlsi project/both_algorithm1/controller.v} {1 {vlog -work work -vopt -stats=none {F:/vlsi project/both_algorithm1/controller.v}
+Model Technology ModelSim SE-64 vlog 10.7 Compiler 2017.12 Dec  7 2017
+-- Compiling module controller
+
+Top level modules:
+	controller
+
+} {} {}}

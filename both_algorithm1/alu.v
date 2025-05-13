@@ -1,0 +1,22 @@
+`timescale 1ns/1ns
+module alu #(parameter n)(z,a,m,addsub,clk);
+output [n-1:0] z;
+input clk;
+input [n-1:0] a,m;
+input addsub;
+assign z=(addsub)? a+m:a-m;
+endmodule
+/*
+module alu #(parameter n)(z,a,m,addsub,clk);
+output reg[n-1:0] z;
+input [n-1:0] a,m;
+input addsub,clk;
+always @(posedge clk) 
+begin
+if (addsub) 
+z = a + m; 
+else 
+z = a - m; 
+end
+endmodule
+*/
